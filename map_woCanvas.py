@@ -125,7 +125,7 @@ class Grid(object):
         dist = self.dist_to_closest(drone, list_of_drones)
         done = False
         observed_ = False
-        if dist > 3 or actionCount> 3*(drone.d_id+1):
+        if dist >= 5 or actionCount> 3*(drone.d_id+1):
             reward = self.rewardTable[drone.x][drone.y]
             done = True
         else:
